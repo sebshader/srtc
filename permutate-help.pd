@@ -1,0 +1,31 @@
+#N canvas 496 107 533 476 10;
+#X text 66 42 A supply (any material list of int \, float and symbols)
+in right inlet is permutated irregularily without immediate repetition
+of an element. Whenever a bang is sent to the left inlet \, one element
+of the supply is sent to the outlet.;
+#X obj 68 118 key-bang 32;
+#X obj 68 139 bng 15 250 50 0 empty empty select 17 7 0 10 -262144
+-1 -1;
+#X obj 68 197 permutate;
+#X obj 68 218 collect;
+#X msg 68 239;
+#X obj 124 218 bng 15 250 50 0 empty empty clear_display[esc] 17 7
+0 10 -262144 -1 -1;
+#X obj 149 142 loadbang;
+#X msg 192 163 1 2 3 4 5;
+#X msg 149 163 a b c;
+#X msg 277 162 7 Shadock 3.14 x;
+#X text 393 163 supply;
+#X text 136 103 space bar;
+#X obj 277 211 key-bang 27;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 0;
+#X connect 6 0 4 1;
+#X connect 7 0 9 0;
+#X connect 7 0 6 0;
+#X connect 8 0 3 1;
+#X connect 9 0 3 1;
+#X connect 10 0 3 1;
+#X connect 13 0 6 0;
