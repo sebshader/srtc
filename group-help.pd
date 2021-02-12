@@ -1,0 +1,36 @@
+#N canvas 389 48 450 300 10;
+#X text 19 8 port of max's zl.group \, which rtc/group uses;
+#X text 25 36 groups numbers received in succession into a list. This
+object is much the same as thresh \, except that since it is told how
+many numbers to wait for \, it returns immediately upon receiveing
+the last one with no time delay. The length of the list to collect
+is given as an optional argument and in the right inlet. Numbers in
+the left inlet are collected into a list until the proper number of
+them has been received \, then they are sent out the outlet.;
+#X floatatom 31 144 5 0 0 1 numbers - -;
+#X floatatom 281 190 5 0 0 1 output_length - -;
+#X obj 176 246 show;
+#X msg 176 276;
+#X obj 224 257 bng 15 250 50 0 empty empty clear_display 17 7 0 10
+-262144 -1 -1;
+#X obj 257 232 key-bang 27;
+#X text 333 231 [esc];
+#X symbolatom 113 159 10 0 0 1 symbols - -;
+#X msg 230 149 1 5 something 3 4 9 25 bob cats;
+#X obj 70 267 print group_help;
+#X text 236 134 lists are simply dripped in;
+#X msg 21 215 clear;
+#X obj 17 189 bng 15 250 50 0 empty empty output_current 17 7 0 10
+-262144 -1 -1;
+#X obj 174 227 group 4;
+#X connect 2 0 15 0;
+#X connect 3 0 15 1;
+#X connect 4 0 5 0;
+#X connect 6 0 4 1;
+#X connect 7 0 6 0;
+#X connect 9 0 15 0;
+#X connect 10 0 15 0;
+#X connect 13 0 15 0;
+#X connect 14 0 15 0;
+#X connect 15 0 4 0;
+#X connect 15 0 11 0;
